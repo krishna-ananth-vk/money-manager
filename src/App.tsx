@@ -7,7 +7,8 @@ import {
   Button,
   Grid,
   Alert,
-  Snackbar
+  Snackbar,
+  GridLegacy
 } from '@mui/material';
 import {
   Add,
@@ -198,13 +199,13 @@ function App() {
           ) : (
             <Grid container spacing={0}>
               {sortedEmis.map((emi) => (
-                <Grid item xs={12} key={emi.id}>
+                <GridLegacy item xs={12} key={emi.id}>
                   <EmiItem
                     emi={emi}
                     onEdit={handleEditEmi}
                     onDelete={handleDeleteEmi}
                   />
-                </Grid>
+                </GridLegacy>
               ))}
             </Grid>
           )}

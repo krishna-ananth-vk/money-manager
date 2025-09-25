@@ -8,7 +8,8 @@ import {
   Button,
   Grid,
   Typography,
-  Box
+  Box,
+  GridLegacy
 } from '@mui/material';
 import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -77,7 +78,7 @@ const AddEmiDialog: React.FC<AddEmiDialogProps> = ({
         <DialogContent>
           <Box sx={{ pt: 2 }}>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <GridLegacy item xs={12}>
                 <TextField
                   label="EMI Name"
                   fullWidth
@@ -85,9 +86,9 @@ const AddEmiDialog: React.FC<AddEmiDialogProps> = ({
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g., Home Loan, Car Loan"
                 />
-              </Grid>
+              </GridLegacy>
 
-              <Grid item xs={12} sm={6}>
+              <GridLegacy item xs={12} sm={6}>
                 <TextField
                   label="EMI Amount"
                   type="number"
@@ -98,9 +99,9 @@ const AddEmiDialog: React.FC<AddEmiDialogProps> = ({
                     startAdornment: <Typography sx={{ mr: 1 }}>₹</Typography>,
                   }}
                 />
-              </Grid>
+              </GridLegacy>
 
-              <Grid item xs={12} sm={6}>
+              <GridLegacy item xs={12} sm={6}>
                 <TextField
                   label="Deduction Date"
                   type="number"
@@ -110,9 +111,9 @@ const AddEmiDialog: React.FC<AddEmiDialogProps> = ({
                   inputProps={{ min: 1, max: 31 }}
                   helperText="Day of month (1-31)"
                 />
-              </Grid>
+              </GridLegacy>
 
-              <Grid item xs={12} sm={6}>
+              <Grid >
                 <DatePicker
                   label="Start Date"
                   value={startDate}
@@ -122,7 +123,7 @@ const AddEmiDialog: React.FC<AddEmiDialogProps> = ({
                 />
               </Grid>
 
-              <Grid item xs={12} sm={6}>
+              <Grid >
                 <DatePicker
                   label="End Date"
                   value={endDate}

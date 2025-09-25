@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid, Box, Chip } from '@mui/material';
+import { Card, GridLegacy, CardContent, Typography, Grid, Box, Chip } from '@mui/material';
 import { TrendingUp, AccountBalance, Savings } from '@mui/icons-material';
 import { calculateMonthlyEmiTotal, isEmiActive } from '../utils/emi-calculations';
 import dayjs from 'dayjs';
@@ -32,7 +32,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ monthlyIncome, emis }) => {
         </Typography>
 
         <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
+          <GridLegacy item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <TrendingUp sx={{ mr: 1, opacity: 0.9 }} />
               <Typography variant="subtitle2" sx={{ opacity: 0.9 }}>
@@ -42,9 +42,9 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ monthlyIncome, emis }) => {
             <Typography variant="h4" sx={{ fontWeight: 700 }}>
               {formatCurrency(monthlyIncome)}
             </Typography>
-          </Grid>
+          </GridLegacy>
 
-          <Grid item xs={12} md={4}>
+          <GridLegacy item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <AccountBalance sx={{ mr: 1, opacity: 0.9 }} />
               <Typography variant="subtitle2" sx={{ opacity: 0.9 }}>
@@ -54,9 +54,9 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ monthlyIncome, emis }) => {
             <Typography variant="h4" sx={{ fontWeight: 700 }}>
               {formatCurrency(totalCurrentEmi)}
             </Typography>
-          </Grid>
+          </GridLegacy>
 
-          <Grid item xs={12} md={4}>
+          <GridLegacy item xs={12} md={4}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <Savings sx={{ mr: 1, opacity: 0.9 }} />
               <Typography variant="subtitle2" sx={{ opacity: 0.9 }}>
@@ -76,7 +76,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ monthlyIncome, emis }) => {
                 fontWeight: 500
               }}
             />
-          </Grid>
+          </GridLegacy>
         </Grid>
       </CardContent>
     </Card>

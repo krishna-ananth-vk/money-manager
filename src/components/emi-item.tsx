@@ -7,7 +7,8 @@ import {
   Chip,
   IconButton,
   Box,
-  LinearProgress
+  LinearProgress,
+  GridLegacy
 } from '@mui/material';
 import { Edit, Delete, CheckCircle, Schedule } from '@mui/icons-material';
 import {
@@ -59,7 +60,7 @@ const EmiItem: React.FC<EmiItemProps> = ({ emi, onEdit, onDelete }) => {
     >
       <CardContent>
         <Grid container spacing={2} alignItems="center">
-          <Grid item xs={12} sm={6} md={3}>
+          <GridLegacy item xs={12} sm={6} md={3}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <Typography variant="h6" sx={{ fontWeight: 600, mr: 1 }}>
                 {emi.name}
@@ -80,9 +81,9 @@ const EmiItem: React.FC<EmiItemProps> = ({ emi, onEdit, onDelete }) => {
                 emi.deductionDate === 2 ? 'nd' : emi.deductionDate === 3 ? 'rd' : 'th'}
               {' '}of every month
             </Typography>
-          </Grid>
+          </GridLegacy>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid >
             <Typography variant="body2" color="text.secondary" gutterBottom>
               Duration
             </Typography>
@@ -94,7 +95,7 @@ const EmiItem: React.FC<EmiItemProps> = ({ emi, onEdit, onDelete }) => {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <GridLegacy item xs={12} sm={6} md={4}>
             <Box sx={{ mb: 1 }}>
               <Typography variant="body2" color="text.secondary" gutterBottom>
                 Progress: {completedEmis} / {totalEmis} EMIs completed
@@ -115,9 +116,9 @@ const EmiItem: React.FC<EmiItemProps> = ({ emi, onEdit, onDelete }) => {
             <Typography variant="body1" sx={{ fontWeight: 500 }}>
               {remainingEmis} EMIs remaining
             </Typography>
-          </Grid>
+          </GridLegacy>
 
-          <Grid item xs={12} sm={6} md={2}>
+          <GridLegacy item xs={12} sm={6} md={2}>
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
               <IconButton
                 onClick={() => onEdit(emi)}
@@ -136,7 +137,7 @@ const EmiItem: React.FC<EmiItemProps> = ({ emi, onEdit, onDelete }) => {
                 <Delete />
               </IconButton>
             </Box>
-          </Grid>
+          </GridLegacy>
         </Grid>
       </CardContent>
     </Card>

@@ -62,9 +62,8 @@ const EmiChart: React.FC<EmiChartProps> = ({
             margin={{ top: 20, bottom: 60, left: 80, right: 20 }}
             slotProps={{
               legend: {
-                direction: 'row',
-                position: { vertical: 'top', horizontal: 'middle' },
-                padding: 0,
+                direction: 'horizontal',
+                position: { vertical: 'top', horizontal: 'center' },
               },
             }}
           />
